@@ -7,7 +7,12 @@ export const fileStorage = multer.diskStorage({
     cb(null, config.get("localFileDestination"));
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now());
+    cb(
+      null,
+      `${file.originalname.split(".")[0]}-${Date.now()}.${
+        file.originalname.split(".")[1]
+      }`
+    );
   },
 });
 

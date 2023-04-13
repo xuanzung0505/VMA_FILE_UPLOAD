@@ -1,5 +1,5 @@
 import express from "express";
-import { fileRouter } from "./user.route";
+import { fileRouter } from "./file.route";
 
 const router = express.Router({ caseSensitive: true });
 
