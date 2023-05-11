@@ -17,10 +17,12 @@ export const fileStorage = multer.diskStorage({
 });
 
 export const fileFilter = function (req: any, file: any, cb: any) {
+  console.log(file.mimetype);
   if (
     file.mimetype === "image/png" ||
     file.mimetype === "image/jpg" ||
-    file.mimetype === "image/jpeg"
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/svg+xml"
   ) {
     // console.log(file);
     cb(null, true);
